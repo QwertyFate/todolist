@@ -85,9 +85,6 @@ app.post("/:anydata", async function(req,res){
 
 });
 
-app.listen(process.env.PORT || 3000,function(){
-    console.log("server up at 3000 port");
-});
 
 async function addinglist(newtype,newentry){
     const newtodo = new todonow ({
@@ -127,3 +124,8 @@ async function gettype(thetype){
          typeneed = enter.type; 
     });
 };
+
+
+app.listen(process.env.PORT || 3000,function(){
+    console.log("server up at 3000 port");
+});
