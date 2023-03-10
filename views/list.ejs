@@ -1,0 +1,28 @@
+<%- include("header") -%>
+
+    <div class="box" id="heading">
+    <h1> Its <%= kindtitle %>!</h1>
+</div>
+
+
+<div class="box">
+       <% for (var i = 0; i < newitemlist.length; i++){ %>
+            <div class="item">
+                <form class="item" action="/delete" method="post">
+                <input type="checkbox" name="checkbox" value=<%= newitemlist[i] %> onchange="this.form.submit()">
+            <p><%= newitemlist[i] %></p>
+        </form>
+        </div>
+      <%  }; %>   
+
+      <form class="item" action=<%= location %> method="post">
+
+        <input type="text" name="text" placeholder="whachagonnado" autocomplete="off"> 
+        <button type="submit">+</button> 
+    
+    </form>
+</div>
+ 
+
+
+<%- include("footer") -%>
